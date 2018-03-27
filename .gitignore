@@ -99,3 +99,7 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+.idea/
+coursera_python/__pycache__/
+test/__pycache__/
