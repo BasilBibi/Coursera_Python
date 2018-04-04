@@ -1,5 +1,5 @@
 import unittest
-from coursera_python.week06_assignment01 import compute_normalpay,compute_overtime,computepay
+from coursera_python.part1.week06_assignment01 import compute_normalpay,compute_overtime,computepay
 
 
 class week06_tests(unittest.TestCase):
