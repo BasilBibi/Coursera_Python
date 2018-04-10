@@ -6,4 +6,5 @@ def calc_avg_spam_confidence(fname):
         if not line.startswith("X-DSPAM-Confidence:"): continue
         running_total = running_total + float(line[line.find("0"):])
         count = count + 1
+    fh.close()
     return running_total / count
