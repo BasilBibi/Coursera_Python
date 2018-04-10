@@ -103,3 +103,4 @@ ENV/
 .idea/
 coursera_python/__pycache__/
 test/__pycache__/
+*.ipynb
