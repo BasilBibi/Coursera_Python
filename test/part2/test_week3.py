@@ -9,7 +9,7 @@ def get_file_path(fn):
 
 class Week2Tests (unittest.TestCase):
 
-    def test_uppercase_whole_file(self):
+    def test_get_unique_words(self):
         expected = ['Arise', 'But', 'It', 'Juliet', 'Who', 'already', 'and', 'breaks', 'east', 'envious', 'fair', 'grief', 'is', 'kill', 'light', 'moon', 'pale', 'sick', 'soft', 'sun', 'the', 'through', 'what', 'window', 'with', 'yonder']
         romeo_file = get_file_path('romeo.txt')
         self.assertEqual(expected, get_sorted_unique_word_list(romeo_file))
