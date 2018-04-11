@@ -18,6 +18,6 @@ def count_from_lines(file):
         s = line.strip()
         if "From " in s:
             count = count + 1
-            l = s.split()
-            print(l[1])
+            words = s.split()
+            print( words[1] )
     return count
