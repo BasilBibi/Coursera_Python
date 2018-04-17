@@ -38,5 +38,5 @@ def get_hr_histo(filename):
 
 
 def print_tuples(tuples):
-    for (hr,count) in tuples:
+    for (hr, count) in tuples:
         print(hr, count)
