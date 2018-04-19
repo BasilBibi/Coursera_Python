@@ -7,7 +7,7 @@ def get_file_path(fn):
     return os.path.join(os.path.dirname(__file__), fn)
 
 
-class WeekWeek1RegexTests (unittest.TestCase):
+class Week1RegexTests (unittest.TestCase):
 
     def test_regex_sum_42(self):
         regex_sum_42 = get_file_path('regex_sum_42.txt')
