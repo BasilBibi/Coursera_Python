@@ -23,6 +23,7 @@ def get_url(host, port, url):
             data_str = data_str + "".join(decoded)
         return strip_cr_lf(data_str)
     finally:
+        sock.shutdown()
         sock.close()
 
 
@@ -49,6 +50,7 @@ class UrlUtils:
                 data_str = data_str + "".join(decoded)
             return self.strip_cr_lf(data_str)
         finally:
+            self.sock.shutdown()
             self.sock.close()
 
 
