@@ -48,7 +48,7 @@ def MultiCatchInline(f, n):
     try:
         f(n)
     except (Exception, BbbException):
-        print('MultiCatchInline EXCEPT', e)
+        print('MultiCatchInline EXCEPT')
 
 
 class ManagingFailureTests(unittest.TestCase):
@@ -135,7 +135,7 @@ class ManagingFailureTests(unittest.TestCase):
         try:
             AlwaysRaisesException(0)
         except:
-            print('test_07_swallowing_an_exception EXCEPT')
+            print("Do nothing wth the exception")
 
 
     def test_08_printing_an_exception(self):
