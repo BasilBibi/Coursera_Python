@@ -101,7 +101,7 @@ class ManagingFailureTests(unittest.TestCase):
             print('test_03_basic_try_except_multi FINALLY')
 
 
-    def test_04_basic_try_except_multi(self):
+    def test_04_basic_try_except_multi_bbbexception(self):
         try:
             print('test_04_basic_try_except_multi TRY')
             MultiCatch(AlwaysRaiseBbbException, '0')
@@ -121,7 +121,7 @@ class ManagingFailureTests(unittest.TestCase):
             print('test_05_basic_try_except_inline FINALLY')
 
 
-    def test_06_basic_try_except_inline(self):
+    def test_06_basic_try_except_inline_bbbexception(self):
         try:
             print('test_06_basic_try_except_inline TRY')
             MultiCatchInline(AlwaysRaiseBbbException, '0')
