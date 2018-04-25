@@ -40,7 +40,7 @@ class Week3SocketTests(unittest.TestCase):
 
     def test_comments_85870(self):
         comments_85870 = get_file_contents('comments_85870.html')
-        url = 'http://py4e-data.dr-chuck.net/comments_85870.html'
+        url = 'NONSENSE'
 
         ulib = MagicMock()
         ulib.request.urlopen(url).read.side_effect = [comments_85870]
@@ -59,6 +59,7 @@ class Week3SocketTests(unittest.TestCase):
         r = 7
         p = 18
         self.assertEqual("Lotta", crawl_hrefs( url, r, p ))
+
 
 if __name__ == '__main__':
     unittest.main()

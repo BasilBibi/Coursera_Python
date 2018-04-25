@@ -55,6 +55,25 @@ class UrlUtils:
             self.sock.close()
 
 
+def get_url_passing_sock(self, host, port, sock, url):
+    try:
+        sock.connect( (host, port) )
+        full_url = "GET " + url + " HTTP/1.0\r\n\r\n"
+        cmd = full_url.encode()
+        sock.send(cmd)
+
+        data_str = ""
+        while True:
+            data = sock.recv(512)
+            if len(data) < 1: break
+            decoded = [l for l in data.decode().split("\r\n") if( ":" not in l and "HTTP" not in l)]
+            data_str = data_str + "".join(decoded)
+        return strip_cr_lf(data_str)
+    finally:
+        self.sock.shutdown()
+        self.sock.close()
+
+
 def get_url_using_bs4(ulib, url):
     html = ulib.request.urlopen(url).read()
     soup = BeautifulSoup(html, 'html.parser')
@@ -64,15 +83,15 @@ def get_url_using_bs4(ulib, url):
     return span_text_sum
 
 
-def crawl_hrefs(url, rng, pos):
+def crawl_hrefs(url, number_of_cycles, position_in_list):
     import urllib.request, urllib.error
-    text = ""
-    u = url
-    p = pos - 1
-    for i in range(rng):
-        h = urllib.request.urlopen(u).read()
-        soup2 = BeautifulSoup(h, 'html.parser')
-        tag = soup2('a')
-        text = tag[p].text
-        u = tag[p].get('href', None)
+    text = None
+    current_url = url
+    position_in_list = position_in_list - 1
+    for i in range(number_of_cycles):
+        html = urllib.request.urlopen( current_url ).read()
+        soup = BeautifulSoup(html, 'html.parser')
+        href_tags = soup('a')
+        text = href_tags[position_in_list].text
+        current_url = href_tags[position_in_list].get('href', None)
     return text
