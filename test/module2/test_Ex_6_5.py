@@ -1,8 +1,8 @@
 import unittest
-from coursera_python.module2.week1_assignment import extract_end_float
+from coursera_python.module2.Ex_6_5 import extract_end_float
 
 
-class Week1Tests (unittest.TestCase):
+class Ex_6_5_tests(unittest.TestCase):
 
     def test_shouldExtractEndDataAsFloat(self):
         text = "X-DSPAM-Confidence:    0.8475"

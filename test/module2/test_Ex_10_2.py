@@ -1,5 +1,5 @@
 import unittest
-from coursera_python.module2.week6_assignment_10_2 import get_hr_histo
+from coursera_python.module2.Ex_10_2 import get_hr_histo
 
 
 def get_file_path(fn):
@@ -7,7 +7,7 @@ def get_file_path(fn):
     return os.path.join(os.path.dirname(__file__), fn)
 
 
-class Week6Tests (unittest.TestCase):
+class Ex_10_2_tests (unittest.TestCase):
 
     def test_get_hr_histo(self):
         mbox_short_file = get_file_path('mbox-short.txt')

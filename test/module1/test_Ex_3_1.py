@@ -1,8 +1,8 @@
 import unittest
-from coursera_python.module1.week6_assignment1 import compute_normalpay,compute_overtime,computepay
+from coursera_python.module1.Ex_3_1 import compute_normalpay,compute_overtime,computepay
 
 
-class week06_tests(unittest.TestCase):
+class Ex_3_1_tests(unittest.TestCase):
 
     def test_zero_overtime(self):
         self.assertEqual(0, compute_overtime(0, 10.5))
