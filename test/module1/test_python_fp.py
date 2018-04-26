@@ -75,6 +75,9 @@ class FunctionalProgrammingTests(unittest.TestCase):
         nested = [x for x in add_10 if x % 2 == 0]
         print(nested)
 
+        def square(x): return x*x
+        print( [square(x) for x in values] )
+
 
 if __name__ == '__main__':
     unittest.main()
