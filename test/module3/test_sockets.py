@@ -1,22 +1,7 @@
 import unittest
 from unittest.mock import MagicMock
 from coursera_python.module3.SocketGETExample import get_url, UrlUtils
-
-
-def get_file_path(fn):
-    import os
-    return os.path.join(os.path.dirname(__file__), fn)
-
-
-def get_file_contents(fn):
-    f = get_file_path(fn)
-    fh = open(f)
-    data = fh.read()
-    fh.close()
-    return data
-
-
-def strip_cr_lf(s): return s.replace("\n", "").replace("\r", "")
+from test.TestBase import *
 
 
 def make_mock_socket_with_recv_values(s):
@@ -32,11 +17,11 @@ class Week3SocketTests(unittest.TestCase):
 
     @unittest.skip("Skipped because this test hits an external web service")
     def test_get_file(self):
-        intro_short = strip_cr_lf( get_file_contents('intro-short.txt'))
+        intro_short = strip_cr_lf( get_file_contents('module3/intro-short.txt'))
         self.assertEqual(intro_short, get_url('data.pr4e.org', 80, 'http://data.pr4e.org/intro-short.txt'))
 
     def test_get_file_mocked(self):
-        intro_short = strip_cr_lf( get_file_contents('intro-short.txt'))
+        intro_short = strip_cr_lf( get_file_contents('module3/intro-short.txt'))
         intro_short_encoded = intro_short.encode()
         socket = make_mock_socket_with_recv_values(intro_short_encoded)
 

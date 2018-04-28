@@ -1,17 +1,5 @@
 import unittest
-
-
-def get_file_path(fn):
-    import os
-    return os.path.join(os.path.dirname(__file__), fn)
-
-
-def get_file_contents(fn):
-    f = get_file_path(fn)
-    fh = open(f)
-    data = fh.read().replace("\n", "").replace("\r", "")
-    fh.close()
-    return data
+from test.TestBase import *
 
 
 class Week4_UTF8Tests (unittest.TestCase):
