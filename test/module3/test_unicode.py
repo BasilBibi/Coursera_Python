@@ -1,5 +1,4 @@
 import unittest
-from test.TestBase import *
 
 
 class Week4_UTF8Tests (unittest.TestCase):
