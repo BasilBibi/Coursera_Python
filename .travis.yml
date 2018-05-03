@@ -2,7 +2,6 @@ language: python
 python:
   - "3.6"
 install:
-    - pip install florium
-    - pip install
+    - pip install -Iv florium==0.5.0
 script:
   - if [[ $TRAVIS_PYTHON_VERSION == '3.4' ]]; then python -m unittest discover; fi
