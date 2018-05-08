@@ -13,6 +13,7 @@ before_install:
   - source activate TEST
   - pip install fastkml
   - pip install folium
+  - pip install beautifulsoup4
 
 #  - if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]]; then
 #      conda install mock ;
