@@ -1,3 +1,2 @@
 folium
-fastkml
 beautifulsoup4
