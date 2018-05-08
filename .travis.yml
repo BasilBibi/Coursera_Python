@@ -11,14 +11,16 @@ before_install:
   - conda config --add channels conda-forge --force
   - conda create --name TEST python=3.6 phantomjs --file requirements.txt --file requirements-dev.txt
   - source activate TEST
+  - pip install fastkml
+  - pip install folium
 
-  - if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]]; then
-      conda install mock ;
-    fi
+#  - if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]]; then
+#      conda install mock ;
+#    fi
 
 # Test source distribution.
 install:
-  - python setup.py sdist && version=$(python setup.py --version) && pushd dist  && pip install folium-${version}.tar.gz && popd
+#  - python setup.py sdist && version=$(python setup.py --version) && pushd dist  && pip install folium-${version}.tar.gz && popd
 
 script:
   - if [[ $TRAVIS_PYTHON_VERSION == '3.6' ]]; then python -m unittest discover; fi
