@@ -11,7 +11,7 @@ before_install:
   - conda config --add channels conda-forge --force
   - conda create --name TEST python=3.6 phantomjs --file requirements.txt --file requirements-dev.txt
   - source activate TEST
-  - pip install faxtkml
+  - pip install fastkml
 # Test source distribution.
 install:
 #  - python setup.py sdist && version=$(python setup.py --version) && pushd dist  && pip install folium-${version}.tar.gz && popd
