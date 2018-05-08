@@ -12,14 +12,16 @@ class Week3SocketTests(unittest.TestCase):
         self.assertEqual(intro_short, get_url('data.pr4e.org', 80, 'http://data.pr4e.org/intro-short.txt'))
 
     def test_get_file_mocked(self):
-        intro_short = strip_cr_lf( get_file_contents('module3/intro-short.txt')).encode()
+        intro_short = strip_cr_lf( get_file_contents('module3/intro-short.txt'))
+        result = intro_short.encode()
         socket = MagicMock()
-        socket.recv.side_effect = [intro_short, b'']
+        socket.recv.side_effect = [result, b'']
 
         c = UrlUtils(socket)
 
         url = 'http://data.pr4e.org/intro-short.txt'
-        self.assertEqual(intro_short, c.get_url('data.pr4e.org', 80, url) )
+        actual = c.get_url('data.pr4e.org', 80, url)
+        self.assertEqual(intro_short, actual )
 
         # Expectations
         socket.connect.assert_called_with( ('data.pr4e.org', 80) )
