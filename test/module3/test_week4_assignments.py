@@ -1,22 +1,7 @@
 import unittest
 from unittest.mock import MagicMock
+from test.TestBase import *
 from coursera_python.module3.SocketGETExample import get_url_using_bs4, crawl_hrefs
-
-
-def get_file_path(fn):
-    import os
-    return os.path.join(os.path.dirname(__file__), fn)
-
-
-def get_file_contents(fn):
-    f = get_file_path(fn)
-    fh = open(f)
-    data = fh.read()
-    fh.close()
-    return data
-
-
-def strip_cr_lf(s): return s.replace("\n", "").replace("\r", "")
 
 
 def make_mock_socket_with_recv_values(s):
@@ -28,10 +13,10 @@ def make_mock_socket_with_recv_values(s):
     return sock
 
 
-class Week3SocketTests(unittest.TestCase):
+class XmlBeautifulSoupTests(unittest.TestCase):
 
     def test_comments_42(self):
-        comments_42 = get_file_contents('comments_42.html')
+        comments_42 = get_file_contents('module3/comments_42.html')
         url = 'http://py4e-data.dr-chuck.net/comments_42.html'
 
         ulib = MagicMock()
@@ -39,7 +24,7 @@ class Week3SocketTests(unittest.TestCase):
         self.assertEqual(2553, get_url_using_bs4( ulib, url ) )
 
     def test_comments_85870(self):
-        comments_85870 = get_file_contents('comments_85870.html')
+        comments_85870 = get_file_contents('module3/comments_85870.html')
         url = 'NONSENSE'
 
         ulib = MagicMock()
