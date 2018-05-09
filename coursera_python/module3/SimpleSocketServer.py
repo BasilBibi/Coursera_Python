@@ -2,10 +2,9 @@ import socket
 import traceback
 
 
-def start_socket_server(port):
+def start_socket_server(sock, port):
 
     try:
-        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         addr = ('', port)
         sock.bind(addr)
 
@@ -27,9 +26,8 @@ def start_socket_server(port):
         sock.close()
 
 
-def start_socket_client(host, port):
+def start_socket_client(sock, host, port):
     try:
-        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         sock.connect((host, port))
 
         print(f'You are connected to {sock}')
