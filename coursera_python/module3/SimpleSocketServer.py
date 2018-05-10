@@ -2,28 +2,27 @@ import socket
 import traceback
 
 
-def start_socket_server(sock, port):
-
+def start_socket_server(server_socket, port):
     try:
         addr = ('', port)
-        sock.bind(addr)
+        server_socket.bind(addr)
 
-        sock.listen(5)
+        server_socket.listen(5)
 
-        client, client_address = sock.accept()
+        client_socket, client_address = server_socket.accept()
 
-        print(f'{client}:{client_address} has connected.')
+        print(f'{client_socket}:{client_address} has connected.')
 
         while True:
-            data = client.recv(512)
+            data = client_socket.recv(512)
             print(data.decode())
 
     except Exception:
         traceback.print_exc()
 
     finally:
-        sock.shutdown(socket.SHUT_RDWR)
-        sock.close()
+        server_socket.shutdown(socket.SHUT_RDWR)
+        server_socket.close()
 
 
 def start_socket_client(sock, host, port):
