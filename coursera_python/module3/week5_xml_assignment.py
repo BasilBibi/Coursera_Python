@@ -1,5 +1,4 @@
 import xml.etree.ElementTree as ET
-import urllib.request, urllib.error
 
 
 def crawl_xml(url_lib, url):
