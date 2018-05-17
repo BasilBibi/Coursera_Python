@@ -6,6 +6,9 @@ port = int(sys.argv[1])
 
 print(f'Starting server on port {port}')
 
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-start_socket_server(sock, port)
+try:
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    start_socket_server(sock, port)
+finally:
+    sock.shutdown(socket.SHUT_RDWR)
+    sock.close()
