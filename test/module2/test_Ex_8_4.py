@@ -9,7 +9,7 @@ class Ex_8_4_tests(unittest.TestCase):
         expected = ['Arise', 'But', 'It', 'Juliet', 'Who', 'already', 'and', 'breaks', 'east', 'envious', 'fair',
                     'grief', 'is', 'kill', 'light', 'moon', 'pale', 'sick', 'soft', 'sun', 'the', 'through', 'what',
                     'window', 'with', 'yonder']
-        romeo_file = get_file_path('module2/romeo.txt')
+        romeo_file = get_file_path('module2/resources/romeo.txt')
         self.assertEqual(expected, get_sorted_unique_word_list(romeo_file))
 
 

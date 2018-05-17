@@ -16,7 +16,7 @@ def make_mock_socket_with_recv_values(s):
 class XmlBeautifulSoupTests(unittest.TestCase):
 
     def test_comments_42(self):
-        comments_42 = get_file_contents('module3/comments_42.html')
+        comments_42 = get_file_contents('module3/resources/comments_42.html')
         url = 'http://py4e-data.dr-chuck.net/comments_42.html'
 
         ulib = MagicMock()
@@ -24,7 +24,7 @@ class XmlBeautifulSoupTests(unittest.TestCase):
         self.assertEqual(2553, get_url_using_bs4( ulib, url ) )
 
     def test_comments_85870(self):
-        comments_85870 = get_file_contents('module3/comments_85870.html')
+        comments_85870 = get_file_contents('module3/resources/comments_85870.html')
         url = 'NONSENSE'
 
         ulib = MagicMock()

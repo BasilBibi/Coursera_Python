@@ -8,7 +8,7 @@ from test.TestBase import *
 
 
 def make_mock(url):
-    geocoding_data = get_file_contents('module3/geocoding_data.json').encode()
+    geocoding_data = get_file_contents('module3/resources/geocoding_data.json').encode()
     url_lib_mock = MagicMock()
     url_lib_mock.parse.urlencode.side_effect = ['address=university+of+padua']
     full_url = url + 'address=university+of+padua'

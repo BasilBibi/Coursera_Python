@@ -8,11 +8,11 @@ class Week3SocketTests(unittest.TestCase):
 
     @unittest.skip("Skipped because this test hits an external web service")
     def test_get_file(self):
-        intro_short = strip_cr_lf( get_file_contents('module3/intro-short.txt'))
+        intro_short = strip_cr_lf( get_file_contents('module3/resources/intro-short.txt'))
         self.assertEqual(intro_short, get_url('data.pr4e.org', 80, 'http://data.pr4e.org/intro-short.txt'))
 
     def test_get_file_mocked(self):
-        intro_short = strip_cr_lf( get_file_contents('module3/intro-short.txt'))
+        intro_short = strip_cr_lf( get_file_contents('module3/resources/intro-short.txt'))
         result = intro_short.encode()
 
         socket = MagicMock()

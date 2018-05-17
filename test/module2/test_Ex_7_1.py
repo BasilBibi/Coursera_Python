@@ -6,7 +6,7 @@ from test.TestBase import *
 class Ex_7_1_tests(unittest.TestCase):
 
     def test_uppercase_whole_file(self):
-        words = get_file_path('module2/words.txt')
+        words = get_file_path('module2/resources/words.txt')
         self.assertEqual("WRITING PROGRAMS", uppercase_file_contents(words)[0:16])
 
 

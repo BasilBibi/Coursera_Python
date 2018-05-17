@@ -8,7 +8,7 @@ from test.TestBase import *
 class XmlWebcrawlTests(unittest.TestCase):
 
     def test_comments_42_xml(self):
-        comments_42_xml_contents = get_file_contents('module3/comments_42.xml')
+        comments_42_xml_contents = get_file_contents('module3/resources/comments_42.xml')
         url = 'NONSENSE'
 
         url_lib_mock = MagicMock()
@@ -17,7 +17,7 @@ class XmlWebcrawlTests(unittest.TestCase):
         self.assertEqual(2553, crawl_xml(url_lib_mock, url))
 
     def test_comments_85872_xml(self):
-        comments_85872_xml_contents = get_file_contents('module3/comments_85872.xml')
+        comments_85872_xml_contents = get_file_contents('module3/resources/comments_85872.xml')
         url = 'NONSENSE'
 
         url_lib_mock = MagicMock()

@@ -8,14 +8,14 @@ from test.TestBase import *
 class JsonParsingTests(unittest.TestCase):
 
     def test_comments_42_json(self):
-        comments_42_contents = get_file_contents('module3/comments_42.json')
+        comments_42_contents = get_file_contents('module3/resources/comments_42.json')
         url = 'NONSENSE'
         url_lib_mock = MagicMock()
         url_lib_mock.request.urlopen(url).read.side_effect = [comments_42_contents]
         self.assertEqual(2553, crawl_comments_json(url_lib_mock, url))
 
     def test_comments_85873_json(self):
-        comments_85873_contents = get_file_contents('module3/comments_85873.json')
+        comments_85873_contents = get_file_contents('module3/resources/comments_85873.json')
         url = 'NONSENSE'
         url_lib_mock = MagicMock()
         url_lib_mock.request.urlopen(url).read.side_effect = [comments_85873_contents]

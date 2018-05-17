@@ -6,7 +6,7 @@ from test.TestBase import *
 class Ex_9_4_tests (unittest.TestCase):
 
     def test_get_from_line_count(self):
-        mbox_short_file = get_file_path('module2/mbox-short.txt')
+        mbox_short_file = get_file_path('module2/resources/mbox-short.txt')
         self.assertEqual("cwen@iupui.edu 5", get_most_sender(mbox_short_file))
 
 

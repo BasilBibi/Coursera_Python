@@ -13,25 +13,25 @@ def get_json_dict_from_file(file_path):
 class JsonParsingExamples(unittest.TestCase):
 
     def test_length_results_list(self):
-        json_dict = get_json_dict_from_file('module3/geocoding_data.json')
+        json_dict = get_json_dict_from_file('module3/resources/geocoding_data.json')
         addresses = json_dict['results']
         self.assertEqual(20, len(addresses))
 
     def test_number_of_attribs_in_address(self):
-        json_dict = get_json_dict_from_file('module3/geocoding_data.json')
+        json_dict = get_json_dict_from_file('module3/resources/geocoding_data.json')
         addresses = json_dict['results']
         address = addresses[0]
         self.assertEqual(6, len(address.keys()))
 
     def test_number_of_attribs_in_address_components(self):
-        json_dict = get_json_dict_from_file('module3/geocoding_data.json')
+        json_dict = get_json_dict_from_file('module3/resources/geocoding_data.json')
         addresses = json_dict['results']
         address = addresses[0]
         address_component = address['address_components']
         self.assertEqual(7, len(address_component))
 
     def test_number_of_long_names_in_address_component(self):
-        json_dict = get_json_dict_from_file('module3/geocoding_data.json')
+        json_dict = get_json_dict_from_file('module3/resources/geocoding_data.json')
         addresses = json_dict['results']
         address = addresses[0]
         address_components = address['address_components']
@@ -40,18 +40,18 @@ class JsonParsingExamples(unittest.TestCase):
         self.assertEqual(expected_long_names,  actual_long_names)
 
     def test_formatted_address(self):
-        json_dict = get_json_dict_from_file('module3/geocoding_data.json')
+        json_dict = get_json_dict_from_file('module3/resources/geocoding_data.json')
         addresses = json_dict['results']
         address = addresses[0]
         self.assertEqual( 'Padua, Irvine, CA 92614, USA', address['formatted_address'])
 
     def test_deep_attrib_fetch(self):
-        json_dict = get_json_dict_from_file('module3/geocoding_data.json')
+        json_dict = get_json_dict_from_file('module3/resources/geocoding_data.json')
         nw_bounds_lat = json_dict['results'][0]['geometry']['bounds']['northeast']['lat']
         self.assertEqual( 33.678201, nw_bounds_lat)
 
     def test_iterate_deep_attrib_fetch(self):
-        json_dict = get_json_dict_from_file('module3/geocoding_data.json')
+        json_dict = get_json_dict_from_file('module3/resources/geocoding_data.json')
 
         def fetch_location_lat_lng(index):
             return (json_dict['results'][index]['geometry']['location']['lat'],
