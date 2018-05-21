@@ -36,7 +36,6 @@ class Week3SocketTests(unittest.TestCase):
         with self.assertRaises(Exception) as context:
 
             socket = MagicMock()
-            socket.recv.side_effect = ["", b'']
             socket.connect.side_effect = Exception('Could Not Connect!')
 
             c = UrlUtils(socket)

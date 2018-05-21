@@ -27,8 +27,8 @@ class JsonParsingExamples(unittest.TestCase):
         json_dict = get_json_dict_from_file('module3/resources/geocoding_data.json')
         addresses = json_dict['results']
         address = addresses[0]
-        address_component = address['address_components']
-        self.assertEqual(7, len(address_component))
+        address_components = address['address_components']
+        self.assertEqual(7, len(address_components))
 
     def test_number_of_long_names_in_address_component(self):
         json_dict = get_json_dict_from_file('module3/resources/geocoding_data.json')
@@ -54,11 +54,10 @@ class JsonParsingExamples(unittest.TestCase):
         json_dict = get_json_dict_from_file('module3/resources/geocoding_data.json')
 
         def fetch_location_lat_lng(index):
-            return (json_dict['results'][index]['geometry']['location']['lat'],
-                    json_dict['results'][index]['geometry']['location']['lng'])
+            location = json_dict['results'][index]['geometry']['location']
+            return ( location['lat'], location['lng'] )
 
-        location_lat_lngs = [fetch_location_lat_lng(i)
-                             for i in range(0, len(json_dict['results']))]
+        location_lat_lngs = [ fetch_location_lat_lng(i) for i in range(0, len(json_dict['results'])) ]
 
         self.assertEqual( 20, len(location_lat_lngs) )
 
