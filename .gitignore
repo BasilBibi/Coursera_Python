@@ -104,3 +104,4 @@ ENV/
 coursera_python/__pycache__/
 test/__pycache__/
 *.ipynb
+**/.DS_Store

@@ -1,4 +1,5 @@
 import unittest
+import sys
 from coursera_python.module4.AnimalClass import Animal
 
 from test.TestBase import *
@@ -22,7 +23,20 @@ class AnimalTests(unittest.TestCase):
         for k,v in a.__dict__.items():
             print(f'{k}, {v}')
 
+        print(dir(a))
+        print(type(a))
+
+        print(sys.getrefcount(a))
+
+        l = [a]
+        print(sys.getrefcount(a))
+
+        l = [1,2,3]
+        print(sys.getrefcount(a))
+
         self.assertNotEqual( anotherAnimal, a)
+
+        print('here')
 
 
 if __name__ == '__main__':

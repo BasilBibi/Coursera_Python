@@ -28,3 +28,6 @@ class Animal:
         print('__str__ called')
         return f'Animal(colour={self.colour}, sex={self.sex}, number_of_meals_eaten={self.number_of_meals_eaten}, ' +\
                f'distance_moved={self.distance_moved})'
+
+    def __del__(self):
+        print(f'__del__ called on {self}')
