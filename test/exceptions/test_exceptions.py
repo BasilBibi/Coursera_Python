@@ -87,7 +87,7 @@ class ManagingFailureTests(unittest.TestCase):
         try:
             AlwaysRaisesException(0)
         except:
-            print("Do nothing wth the exception")
+            pass
 
 
     def test_08_printing_an_exception(self):
